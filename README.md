@@ -4,16 +4,59 @@ These programs are the exercises used in an AP CS A class. They are organized by
 
 ## Table of Contents
 
-* [Strings](#strings)
+* [Simple Math](#simple-math)
 * [Conditionals](#conditionals)
 * [Loops](#loops)
 
 <br>
 <br>
 
-## Strings
+## Simple Math
 
+### [Area](/SimpleMath/Area/Area.java)
 
+Input: length and width
+Output: area of rectangle
+
+### [Order](/SimpleMath/Order/Order.java)
+
+Input: number of burgers, fries and sodas
+Output: total cost
+
+### [ObjectHeight](/SimpleMath/ObjectHeight/ObjectHeight.java)
+
+Input: a time less than 4.5 seconds
+Output: the height of an object which would reach the ground in that time from 100m
+
+### [Sleep](/SimpleMath/Sleep/Sleep.java)
+
+Input: your birthdate and the current date
+Output: the number of days you have been alive and how many hours you've slept
+
+### [TimeConversion](/SimpleMath/TimeConversion/TimeConversion.java)
+
+Input: time in minutes
+Output: time in hours
+
+### [DivAndMod](/SimpleMath/DivAndMod/DivAndMod.java)
+
+Input: 2 integers
+Output: integer 1 / integer 2, integer 1 % integer 2, and vice versa
+
+### [Digits](/SimpleMath/Digits/Digits.java)
+
+Input: three-digit number
+Output: hundreds-place digit, tens-place digit, and ones-place digit
+
+### [Change](/SimpleMath/Change/Change.java)
+
+Input: change in cents
+Output: breakdown of the minimum number of coins to make the change
+
+### [PizzaCost](/SimpleMath/PizzaCost/PizzaCost.java)
+
+Input: diameter of pizza in inches
+Output: cost of making a pizza of that diameter
 
 <br>
 <br>
@@ -25,6 +68,6 @@ These programs are the exercises used in an AP CS A class. They are organized by
 <br>
 <br>
 
-# Loops
+## Loops
 
 
