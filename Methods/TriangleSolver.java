@@ -16,8 +16,9 @@ public class TriangleSolver {
       return Math.toDegrees(inRadians);
    }
    
-   public double getSideFromSSA(double side1, double side2, double angle1) {
-      return Math.toDegrees // use principle of above func ^
+   public double getSideFromAAS(double angle1, double angle2, double side1) {
+      double inDegrees = (Math.toDegrees(Math.sin(Math.toRadians(angle2))) * side1) / Math.toDegrees(Math.sin(Math.toRadians(angle1)));
+      return inDegrees; // use principle of above func ^
    }
    
    public double getSideFromASA(double angle1, double side1, double angle2) {
@@ -82,7 +83,12 @@ public class TriangleSolver {
          System.out.println("Solution 1: ");
          angleB = getAngleFromSSA(sideA, sideB, angleA);
          angleC = 180 - (angleA + angleB);
-         System.out.println(angleB);
+         sideC = getSideFromAAS(angleA, angleC, sideA);
+         display();
+         System.out.println("\nSolution 2: ");
+         angleC = 180 - angleB;
+         angleB = 180 - (angleB + angleA);
+         sideC = getSideFromAAS(angleA, angleC, sideA);
       }
    }
    
