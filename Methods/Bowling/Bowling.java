@@ -16,9 +16,9 @@ public class Bowling {
       }
       
       ArrayList<ArrayList> games = getGameInfo(sc);
-      System.out.println(games);
+      //System.out.println(games);
       int game1 = printScore(games.get(0));
-      System.out.println(game1);
+      //System.out.println(game1);
    }
    
    public static ArrayList<ArrayList> getGameInfo(Scanner sc) {
@@ -46,10 +46,11 @@ public class Bowling {
       int turns = 1;
       int[] turnTotals = new int[10];
       
+      //start of display header
       System.out.print("\t");
       for (int j = 1; j < 11; j++) {
          System.out.print(j + "\t\t");
-      }
+      }System.out.println("\n--------------------------------------------------------------------  ");
       
       while (turns < 11) {
          int turnScore = 0;
@@ -64,6 +65,8 @@ public class Bowling {
                turnScore += rolls.get(i+1);
             }
             i++;
+            
+            System.out.print("| | |X");
          } else if (rolls.get(i) + rolls.get(i+1) == 10) {
             turnScore += 10;
             
@@ -71,15 +74,29 @@ public class Bowling {
                turnScore += rolls.get(i+2);
             }
             i += 2;
+            
+            System.out.print("| |" + rolls.get(i) + "|/");
          } else {
             turnScore += rolls.get(i);
             turnScore += rolls.get(i+1);
             i += 2;
+            char roll1, roll2;
+            if (rolls.get(i) == 0) {
+               roll1 = '-';
+            } else {
+               roll1 = (char) (rolls.get(i) + '0');
+            } if (rolls.get(i+1) == 0) {
+               roll2 = '-';
+            } else {
+               roll2 = (char) (rolls.get(i+1) + '0');
+            }
+            
+            System.out.print("| |" + roll1 + "|" + roll2);
          }
          totalScore += turnScore;
          turnTotals[turns-1] = totalScore;
          turns++;
-         System.out.println(turnScore);
+         //System.out.println(turnScore);
       } return totalScore;
    }
 }
