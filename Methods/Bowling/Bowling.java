@@ -16,9 +16,15 @@ public class Bowling {
       }
       
       ArrayList<ArrayList> games = getGameInfo(sc);
-      //System.out.println(games);
-      int game1 = printScore(games.get(0));
-      //System.out.println(game1);
+      int numGames;
+      int gamesTotal = 0;
+      
+      for (numGames = 0; numGames < games.size(); numGames++) {
+         System.out.println("\n\nGame " + (numGames+1) + ":");
+         gamesTotal += printScore(games.get(numGames));
+      }
+      int seriesAvg = gamesTotal / numGames;
+      System.out.println("\n The bowler's series average was: " + seriesAvg);
    }
    
    public static ArrayList<ArrayList> getGameInfo(Scanner sc) {
@@ -64,22 +70,31 @@ public class Bowling {
             } else if (i < rolls.size() - 1) {
                turnScore += rolls.get(i+1);
             }
-            i++;
             
             System.out.print("| | |X");
+            
+            if (turns == 10) {
+               System.out.print("| |" + rolls.get(i+1) + "|" + rolls.get(i+2));
+            }
+            
+            i++;
          } else if (rolls.get(i) + rolls.get(i+1) == 10) {
             turnScore += 10;
             
             if (i < rolls.size() - 2) {
                turnScore += rolls.get(i+2);
             }
-            i += 2;
             
             System.out.print("| |" + rolls.get(i) + "|/");
+            
+            if (turns == 10) {
+               System.out.print("| |" + rolls.get(i+2));
+            }
+
+            i += 2;
          } else {
             turnScore += rolls.get(i);
             turnScore += rolls.get(i+1);
-            i += 2;
             char roll1, roll2;
             if (rolls.get(i) == 0) {
                roll1 = '-';
@@ -92,11 +107,24 @@ public class Bowling {
             }
             
             System.out.print("| |" + roll1 + "|" + roll2);
+            i += 2;
          }
          totalScore += turnScore;
          turnTotals[turns-1] = totalScore;
          turns++;
-         //System.out.println(turnScore);
-      } return totalScore;
+      } System.out.println("|");
+      
+      for (int j = 0; j < turnTotals.length; j++) {
+         String spacing = "\t  ";
+         if (turnTotals[j] / 100 >= 1) {
+            spacing = "  ";
+         } else if (turnTotals[j] / 10 >= 1) {
+            spacing = "\t ";
+         }
+         
+         System.out.print("|" + spacing + turnTotals[j]);
+      } System.out.println("|");
+      
+      return totalScore;
    }
 }
