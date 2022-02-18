@@ -1,11 +1,8 @@
 /**
  * ArrayPlotter.java  10/18/14
  *
- * @author - Jane Doe
- * @author - Period n
- * @author - Id nnnnnnn
- *
- * @author - I received help from ...
+ * @author - Paul Schakel
+ * @author - Period 1
  *
  *
  * The ArrayPlotter class provides methods for drawing in
