@@ -3,8 +3,9 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-public class Array2DExercisesTest {
+import Array2DExercises.Array2DExercises;
 
+public class Array2DExercisesTest {
 
 	// example arrays for testing
 	private int[][] squarepos, squareneg, sorted, reverse, jagged, tall, wide, negative;
@@ -60,7 +61,16 @@ public class Array2DExercisesTest {
 		   {-20,-18,-1}
 	   };
     }
-
+    
+   @Test public void testGetMax() {
+      assertEquals(16, Array2DExercises.max(sorted));
+   }
+   
+   @Test public void testGetRowSum() {
+      assertEquals(10, Array2DExercises.rowSum(sorted, 0));
+   }
+   
+   /*
 	@Test public void testGetTotal() {
 		assertEquals(136, Array2DExercises.getTotal(sorted));
 	}
@@ -131,5 +141,5 @@ public class Array2DExercisesTest {
 		assertEquals(false, Array2DExercises.isRectangularArray(jagged));
 		assertEquals(true, Array2DExercises.isRectangularArray(squareneg));
 		assertEquals(true, Array2DExercises.isRectangularArray(squarepos));
-	}
+	} */
 }
