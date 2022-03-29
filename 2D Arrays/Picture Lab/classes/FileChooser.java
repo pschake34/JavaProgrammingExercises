@@ -2,6 +2,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import java.util.Properties;
 import java.io.*;
+import java.nio.file.*;
 import java.net.*;
   
 /**
@@ -104,18 +105,19 @@ public class FileChooser
     boolean done = false;
     File dirFile = null;
     
-    // try to find the images directory
+    // try to find the images directory -- I had to rewrite this using Paths for it to actually work
       try {
         // get the URL for where we loaded this class 
         Class currClass = Class.forName("FileChooser");
-        Path fileURL = new Path("C://Users/pschake34/Desktop/AP Computer Science A/2D Arrays/Picture Lab/images/");
-        directory = fileURL.getPath();
-        System.out.println(classURL);
+        Path fileURL = Paths.get("C://Users/pschake34/Desktop/AP Computer Science A/2D Arrays/Picture Lab/images/");
+        directory = fileURL.toString();
+        System.out.println(fileURL);
         directory = URLDecoder.decode(directory, "UTF-8");
         dirFile = new File(directory);
         if (dirFile.exists()) {
-          //setMediaPath(directory);
-          return directory;
+          return directory + "\\";
+        } else {
+          System.out.println("dirFile doesn't exist");
         }
       } catch (Exception ex) {
          ex.printStackTrace();

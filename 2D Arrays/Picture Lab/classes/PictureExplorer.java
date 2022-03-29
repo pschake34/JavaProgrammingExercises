@@ -800,8 +800,10 @@ public class PictureExplorer implements MouseMotionListener, ActionListener, Mou
    */
   public static void main( String args[])
   {
-    String path = FileChooser.getMediaPath("beach.jpg");
+    String path = FileChooser.getMediaPath("seagull.jpg");
     Picture pix = new Picture(path);
+    //Picture smallPic = pix.scale(0.25, 0.25);
+    //smallPic.write(FileChooser.getMediaPath("smallWall.jpg"));
     pix.explore();
   }
   
