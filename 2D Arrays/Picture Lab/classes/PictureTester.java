@@ -107,6 +107,13 @@ public class PictureTester
     snowman.explore();
   }
 
+  public static void testMirrorGull()
+  {
+    Picture gull = new Picture("seagull.jpg");
+    //gull.explore();
+    gull.mirrorGull();
+    gull.explore();
+  }
 
 
   
@@ -126,12 +133,13 @@ public class PictureTester
     //testFixUnderwater();
     //testMirrorHorizontalBotToTop();
     //testMirrorTemple();
-    testMirrorArms();
+    //testMirrorArms();
+    //testMirrorGull();
     //testMirrorGull();
     //testMirrorDiagonal();
     //testCollage();
     //testCopy();
-    //testEdgeDetection();
+    testEdgeDetection();
     //testEdgeDetection2();
     //testChromakey();
     //testEncodeAndDecode();
